@@ -1,4 +1,6 @@
 # STL Viewer
+[view it live here](https://kaitlynhova.github.io/WebGL-STL-Viewer/)
+
 In order to check it out on local, you need to use something like [MAMP](https://www.mamp.info/en/) to create a local server. Don't worry, you don't need the PRO version.
 
 ## Directions

@@ -41,7 +41,7 @@ function init() {
 
     mesh.position.set( 0, 0, 0 );
     mesh.rotation.set( 0, 0, 0 );
-    mesh.scale.set( .1, .1, .1 );
+    mesh.scale.set( .02, .02, .02 );
 
     mesh.castShadow = true;
     mesh.receiveShadow = true;

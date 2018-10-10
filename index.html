@@ -6,10 +6,29 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
   </head>
   <body>
+    <div id="stl_viewer"></div>
+
     <script src="js/three.js"></script>
     <script src="js/STLLoader.js"></script>
     <script src="js/Detector.js"></script>
     <script src="js/OrbitControls.js"></script>
     <script src="js/handLoader.js"></script>
+
+    <script>
+      window.onload = function() {
+        init("https://s3.amazonaws.com/limbforgestls/EbeArm/Ebe_forearm_L/forearm_L_C4-200_L1-230.stl", document.getElementById("stl_viewer"))
+      }
+    </script>
+
+    <style>
+    #stl_viewer {
+      width: 350px;
+      height: 350px;
+    }
+    #stl_viewer canvas{
+      width: auto!important;
+      height: auto!important;
+    }
+    </style>
   </body>
 </html>

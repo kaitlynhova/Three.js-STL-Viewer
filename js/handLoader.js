@@ -4,12 +4,12 @@ var camera, scene, renderer;
 
 init();
 
-function init() {
+function init(obj3D, div) {
 
   scene = new THREE.Scene();
   scene.add( new THREE.AmbientLight( 0x999999 ) );
 
-  camera = new THREE.PerspectiveCamera( 35, window.innerWidth / window.innerHeight, 1, 500 );
+  camera = new THREE.PerspectiveCamera( 35, div.offsetWidth / div.offsetHeight, 1, 500 );
 
   // Z is up for objects intended to be 3D printed.
 
@@ -27,8 +27,8 @@ function init() {
   renderer = new THREE.WebGLRenderer( { antialias: true } );
   renderer.setClearColor( 0x999999 );
   renderer.setPixelRatio( window.devicePixelRatio );
-  renderer.setSize( window.innerWidth, window.innerHeight );
-  document.body.appendChild( renderer.domElement );
+  renderer.setSize( div.offsetWidth, div.offsetHeight );
+  div.appendChild( renderer.domElement );
 
   var loader = new THREE.STLLoader();
 
@@ -36,7 +36,7 @@ function init() {
   // Binary files
 
   var material = new THREE.MeshPhongMaterial( { color: 0x0e2045, specular: 0x111111, shininess: 200 } );
-  loader.load( 'https://s3.amazonaws.com/limbforgestls/EbeArm/Ebe_forearm_L/forearm_L_C4-200_L1-230.stl', function ( geometry ) {
+  loader.load( obj3D, function ( geometry ) {
     var mesh = new THREE.Mesh( geometry, material );
 
     mesh.position.set( 0, 0, 0 );
